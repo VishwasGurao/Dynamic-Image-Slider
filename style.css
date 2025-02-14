@@ -1,0 +1,117 @@
+/* Body Styling */
+body {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Smoke Video Background */
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5; /* Adjust opacity as needed */
+    z-index: -1; /* Keeps it behind everything */
+}
+
+/* Bigger Container */
+.container {
+    position: relative;
+    width: 80vw;
+    height: 90vh;
+    max-width: 1200px;
+    max-height: 700px;
+}
+
+/* Image Slider */
+@keyframes rgbBlink {
+    0% { box-shadow: 0 0 20px rgb(255, 0, 0); } /* Red */
+    25% { box-shadow: 0 0 20px rgb(0, 255, 0); } /* Green */
+    50% { box-shadow: 0 0 20px rgb(0, 0, 255); } /* Blue */
+    75% { box-shadow: 0 0 20px rgb(255, 255, 0); } /* Yellow */
+    100% { box-shadow: 0 0 20px rgb(255, 0, 255); } /* Purple */
+}
+
+.Image-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    animation: rgbBlink 1.5s infinite alternate; /* Apply the RGB effect */
+}
+
+
+/* Slider List */
+.Image-slider ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Slider Items */
+.Image-slider ol li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* Show Active Slide */
+.Image-slider ol li.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Image Styling - Fit Properly */
+.Image-slider ol li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Buttons */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 15px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+button:hover {
+    background: transparent;
+    color: rgba(150, 150, 150, 0.589);
+    font-size: 80px;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
